@@ -3,8 +3,9 @@
 	export async function load({ fetch, params }) {
 		// await new Promise((resolve) => setTimeout(resolve, 1000));
 		const id = params.id;
-		const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
-		const guide = await res.json();
+		// const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+		const res = await fetch(`/guides/${id}.json`);
+		const { guide } = await res.json();
 		// console.log(guide);
 
 		if (res.ok) {

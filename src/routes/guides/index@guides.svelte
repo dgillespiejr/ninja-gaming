@@ -2,8 +2,9 @@
 	// This function runs automatically by SvelteKit, and on the server when accessed directly instead of a clicked link
 	// @ts-ignore
 	export async function load({ fetch }) {
-		const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-		const guides = await res.json();
+		// const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+		const res = await fetch('/guides.json');
+		const { guides } = await res.json();
 		// console.log(guides);
 
 		if (res.ok) {
